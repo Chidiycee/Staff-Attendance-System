@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROJECT</title>
+    <link rel="stylesheet" href="style.css">    
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images.jpg" alt="Logo">
+      </div>
+      <div class="title">
+        <h2> <span>STAFF</span> ATTENDANCE SYSTEM</h2>
+      </div>
+    </header>
+    
+      
+    <section>
+      <nav>
+        <ul> 
+          <div class="tab">
+            <button class="tablinks" onclick="openNav(event, 'Home')" id="defaultOpen">Home</button>
+            <button class="tablinks" onclick="openNav(event, 'registerStaff')">Register staff</button>
+            <button class="tablinks" onclick="openNav(event, 'staffDetails')">Staff Details</button>
+            <button class="tablinks" onclick="openNav(event, 'registerAttendance')">Register attendance</button>
+            <button class="tablinks" onclick="openNav(event, 'displayAttendances')">Display Attendances</button>
+          </div>
+
+        </ul>
+      </nav>
+        
+      <article>
+          <!-- homepage details -->
+       <div id="Home" class="tabcontent">
+       
+          <div id="image-container"> 
+            <h1  style="text-align: center; color: blue; font-size: 3em;">WELCOME TO PRESSPRINT</h1>
+          </div>
+          <img src="download (1).jpeg" style="width: 80%; height: 500px;">
+          <h3  style="color: blue; font-size: 3em; text-align: center;">Always Remember We Work To Perfection</h3>
+        </div>
+
+      
+        <!-- Collection of register staff details -->
+       
+        <div id="registerStaff" class="tabcontent" >
+          <h2><span>Register </span>Staff</h2>
+          <form id="register-staff-form"> 
+            <label for="firstName" >First Name:</label>
+            <input type="text" id="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" required>
+            <label for="placeOfBirth">Place of Birth:</label>
+            <input type="text" id="placeOfBirth" required>
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <label for="department">Department:</label>
+            <select id="department" required>
+              <option value="markerting">Marketing</option>
+              <option value="pdl">PDL</option>
+              <option value="printing">Printing</option>
+            </select>
+            <label for="status">Status:</label>
+            <select id="status" required>
+              <option value="permanent">Permanent</option>
+              <option value="temporal">Temporal</option>
+              <option value="intern">Intern</option>
+            </select>
+            <button id="register-staff-btn" onclick="addUser(),openNav(event, 'staffDetails')">Register Staff</button>
+          </form>
+        </div>
+        <!-- Display of staff details -->
+        <div id="staffDetails" class="tabcontent">
+          <table id="infoTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Date of birth</th>
+                <th>place of birth</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+      
+        <div id="registerAttendance" class="tabcontent">
+          <h2><span>Register </span>Attendance </h2>
+       
+          <form id="userForm">
+            <select id="userSelect">
+              <option value="">-- Select a User --</option>
+              <!-- Options will be dynamically added here -->
+          </select>
+          <button type="button" onclick="showSelectedUser(),openNav(event, 'displayAttendances')" class="tablinks">Take attendance</button>
+           </form>
+        </div>
+
+      
+        <div id="displayAttendances" class="tabcontent">
+          <table id="attendanceTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Attendance</th>
+                <th>Date</th>
+                <th>Entry time</th>
+                <th>Exit time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+      
+    <footer>
+      <p>Copyright @2024; Designed by PRESPRINT Plc</p>
+    </footer>
+    <!--  Include JavaScript file -->
+    <script src="project.js"></script>
+  
+  </body>
+</html>
